@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
+import 'Jordans.dart';
+import 'classic.dart';
+import 'leathers.dart';
+import 'loafers.dart';
 import 'main.dart';
+import 'oxfords.dart';
+import 'sneakers.dart';
+import 'sports.dart';
 
-class Categoties extends StatefulWidget {
-  const Categoties({Key? key}) : super(key: key);
+class Categories extends StatefulWidget {
+  const Categories({Key? key}) : super(key: key);
 
   @override
-  State<Categoties> createState() => _cateState();
+  State<Categories> createState() => _cateState();
 }
 
-class _cateState extends State<Categoties> {
+class _cateState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("SHOES"),
+        title: Text("𝕎𝕒𝕝𝕜 𝕀𝕟 𝕗𝕒𝕤𝕙𝕚𝕠𝕟"),
         backgroundColor: Color(0xFF405AB0),
         actions: [
           IconButton(
@@ -25,7 +32,7 @@ class _cateState extends State<Categoties> {
         ],
       ),
       body: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
+        scrollDirection: Axis.vertical,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -51,7 +58,7 @@ class _cateState extends State<Categoties> {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     onPressed: () {
-                      // Handle button tap
+                      sneakers(context);
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
@@ -64,7 +71,7 @@ class _cateState extends State<Categoties> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Padding(
+                        child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
                             "Sneakers",
@@ -91,12 +98,12 @@ class _cateState extends State<Categoties> {
                     ],
                   ),
                   child: MaterialButton(
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     onPressed: () {
-                      // Handle button tap
+                      sports(context);
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
@@ -109,7 +116,7 @@ class _cateState extends State<Categoties> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Padding(
+                        child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
                             "Sports",
@@ -147,7 +154,7 @@ class _cateState extends State<Categoties> {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     onPressed: () {
-                      // Handle button tap
+                      loafers(context);
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
@@ -192,7 +199,7 @@ class _cateState extends State<Categoties> {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     onPressed: () {
-                      // Handle button tap
+                      jordan(context);
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
@@ -243,7 +250,7 @@ class _cateState extends State<Categoties> {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     onPressed: () {
-                      // Handle button tap
+                      leathers(context);
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
@@ -256,7 +263,7 @@ class _cateState extends State<Categoties> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Padding(
+                        child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
                             "Leather",
@@ -288,7 +295,7 @@ class _cateState extends State<Categoties> {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     onPressed: () {
-                      // Handle button tap
+                      oxfords(context);
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20.0),
@@ -338,7 +345,7 @@ class _cateState extends State<Categoties> {
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 onPressed: () {
-                  // Handle button tap
+                  classic(context);
                 },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
@@ -351,7 +358,7 @@ class _cateState extends State<Categoties> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: Padding(
+                    child: const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         "Classic",
@@ -367,13 +374,26 @@ class _cateState extends State<Categoties> {
               ),
             ),
             Container(
-              height: 50,
+              height: 28,
             ),
-            Center(
-              child: Container(
-                width: 400,
-                child: Image.asset('assets/images/sho4.gif'),
+            MaterialButton(
+              padding: const EdgeInsets.all(12.0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
               ),
+              onPressed: () {
+
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.0),
+                child: Container(
+                  width: 400,
+                  child: Image.asset('assets/images/sho7.gif'),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 60,
             ),
           ],
         ),
@@ -400,26 +420,26 @@ class _cateState extends State<Categoties> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 IconButton(icon: const Icon(Icons.home), onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MaterialApp(
+                      // title of the application
+                      title: '𝕎𝕒𝕝𝕜 𝕀𝕟 𝕗𝕒𝕤𝕙𝕚𝕠𝕟',
+                      debugShowCheckedModeBanner: false,  //for remove line
+                      // theme of the widget
+                      theme: ThemeData(
+                          appBarTheme: const AppBarTheme(color: Colors.lightBlueAccent)
 
+                      ),
+                      // Inner UI of the application
+                      home: const MyHomePage(title: '𝕎𝕒𝕝𝕜 𝕀𝕟 𝕗𝕒𝕤𝕙𝕚𝕠𝕟'),
+                    )),
+                  );
                 }),
                 IconButton(
                   icon: const Icon(Icons.explore),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MaterialApp(
-                        // title of the application
-                        title: 'Yoga',
-                        debugShowCheckedModeBanner: false,  //for remove line
-                        // theme of the widget
-                        theme: ThemeData(
-                            appBarTheme: const AppBarTheme(color: Colors.lightBlueAccent)
 
-                        ),
-                        // Inner UI of the application
-                        home: const MyHomePage(title: 'Yoga'),
-                      )),
-                    );
                   },
                 ),
                 IconButton(
@@ -441,4 +461,33 @@ class _cateState extends State<Categoties> {
       ),
     );
   }
+}
+
+
+void sneakers(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Sneakers()));
+}
+
+void sports(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Sports()));
+}
+
+void loafers(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Loafers()));
+}
+
+void jordan(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Jordan()));
+}
+
+void leathers(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Leathers()));
+}
+
+void oxfords(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Oxfords()));
+}
+
+void classic(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Classic()));
 }

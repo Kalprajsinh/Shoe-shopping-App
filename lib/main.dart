@@ -1,13 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'Jordans.dart';
 import 'categories.dart';
+import 'loafers.dart';
+import 'sneakers.dart';
 import 'webview.dart';
 import 'splash_screen.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  final appTitle = 'SHOES';
+  final appTitle = '𝕎𝕒𝕝𝕜 𝕀𝕟 𝕗𝕒𝕤𝕙𝕚𝕠𝕟';
 
   const MyApp({Key? key}) : super(key: key);
 
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: appTitle,
-      home: SplashScreen(), // Use SplashScreen as the initial screen
+      home: const SplashScreen(), // Use SplashScreen as the initial screen
     );
   }
 }
@@ -36,7 +38,7 @@ class MyHomePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.shopping_cart),
             onPressed: () {
-              // Handle cart icon tap
+
             },
           ),
         ],
@@ -66,15 +68,19 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ),
               ),
-
+              Padding(padding: EdgeInsets.only(top: 5)),
               SizedBox(
                 height: 30,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const Padding(
+                      padding: EdgeInsets.only(left: 8.0),
+                      child: Text("𝐂𝐚𝐭𝐞𝐠𝐨𝐫𝐢𝐞𝐬..",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 23,color: Colors.black),),
+                    ),
                     TextButton(onPressed: () {
-                      shoe1(context);
+                      categoties(context);
                     }, child: const Text("See All")),
                   ],
                 ),
@@ -87,8 +93,7 @@ class MyHomePage extends StatelessWidget {
                   children: [
                     MaterialButton(
                       onPressed: () {
-                        // Your onPressed function
-                        shoe1(context);
+                        jordan(context);
                       },
                       child: SizedBox(
                         width: 200,
@@ -105,7 +110,7 @@ class MyHomePage extends StatelessWidget {
                                 ),
                               ],
                             image: const DecorationImage(
-                              image: AssetImage('assets/images/col (1).jpg'), // Replace with the actual image asset path
+                              image: AssetImage('assets/images/col (4).jpg'), // Replace with the actual image asset path
                               fit: BoxFit.cover, // Adjust the BoxFit property as needed
                             ),
                             borderRadius: BorderRadius.circular(13.0),
@@ -114,10 +119,10 @@ class MyHomePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [Padding(
                               padding: EdgeInsets.all(8.0),
-                              child: Text("Shoe1", style: TextStyle(
+                              child: Text("Jordan", style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
-                                fontSize: 16,
+                                fontSize: 20,
                               ),
                               ),
                             ),],
@@ -130,8 +135,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                     MaterialButton(
                       onPressed: () {
-                        // Your onPressed function
-                        shoe1(context);
+                        sneakers(context);
                       },
                       child: SizedBox(
                         width: 200,
@@ -148,7 +152,7 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ],
                             image: const DecorationImage(
-                              image: AssetImage('assets/images/col (4).jpg'), // Replace with the actual image asset path
+                              image: AssetImage('assets/images/col (3).jpg'), // Replace with the actual image asset path
                               fit: BoxFit.cover, // Adjust the BoxFit property as needed
                             ),
                             borderRadius: BorderRadius.circular(13.0),
@@ -157,10 +161,10 @@ class MyHomePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [Padding(
                               padding: EdgeInsets.all(8.0),
-                              child: Text("Shoe1", style: TextStyle(
+                              child: Text("Sneakers", style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
-                                fontSize: 16,
+                                fontSize: 20,
                               ),
                               ),
                             ),],
@@ -173,8 +177,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                     MaterialButton(
                       onPressed: () {
-                        // Your onPressed function
-                        shoe1(context);
+                        loafers(context);
                       },
                       child: SizedBox(
                         width: 200,
@@ -199,10 +202,10 @@ class MyHomePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [Padding(
                               padding: EdgeInsets.all(8.0),
-                              child: Text("Shoe1", style: TextStyle(
+                              child: Text("Loafers", style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
-                                fontSize: 16,
+                                fontSize: 20,
                               ),
                               ),
                             ),],
@@ -217,18 +220,14 @@ class MyHomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Text("New Collections..",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Color(
-                    0xBDBB3838)),),
-              ),
+
               MaterialButton(
                 padding: const EdgeInsets.all(12.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 onPressed: () {
-                  // Add your onPressed logic here
+
                 },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
@@ -239,7 +238,10 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
 
-
+              const Padding(
+                padding: EdgeInsets.all(7.0),
+                child: Text("𝐁𝐞𝐬𝐭 𝐨𝐟𝐟𝐞𝐫𝐬..",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 23,color: Colors.black)),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -262,22 +264,26 @@ class MyHomePage extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
                         child: Container(
-                          width: 170,
-                          height: 360,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: Image.asset('assets/images/11.jpg').image,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          child: const Column(
-                            children: [
-                              SizedBox(
-                                height: 200,
+                            width: 180,
+                            height: 250,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: Image.asset('assets/shoes_/sport1.jpg').image,
+                                fit: BoxFit.cover,
                               ),
-                              Text("shoes name\nother text")
-                            ],
-                          )
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text("LEAP7X Black",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+                                  Text("Price : \$124.90",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                                  Text("★ ★ ★ ★ ★",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)
+                                ],
+                              ),
+                            )
                         ),
                       ),
                       onPressed: () {
@@ -296,75 +302,76 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: Column(
-                      children: [
-                        MaterialButton(
-                          padding: const EdgeInsets.all(12.0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20.0),
-                            child: Container(
-                              width: 170,
-                              height: 170,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: Image.asset('assets/images/22.jpg').image,
-                                  fit: BoxFit.cover,
-                                ),
+                    child: MaterialButton(
+                      padding: const EdgeInsets.all(12.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Container(
+                            width: 180,
+                            height: 250,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: Image.asset('assets/shoes_/jordan1.jpg').image,
+                                fit: BoxFit.cover,
                               ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text("Pranayama", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 29,
-                                ),
-                                ),
-                              ),
-
                             ),
-                          ),
-                          onPressed: () {
-
-                          },
-                        ),
-                        MaterialButton(
-                          padding: const EdgeInsets.all(12.0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20.0),
-                            child: Container(
-                              width: 170,
-                              height: 170,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: Image.asset('assets/images/col (3).jpg').image,
-                                  fit: BoxFit.cover,
-                                ),
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text("Air Jordan",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+                                  Text("Price : \$85.45",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                                  Text("★ ★ ★ ★ ★",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)
+                                ],
                               ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text("Pranayama", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 29,
-                                ),
-                                ),
-                              ),
-
-                            ),
-                          ),
-                          onPressed: () {
-
-                          },
+                            )
                         ),
-                      ],
+                      ),
+                      onPressed: () {
+                        // shoe1(context);
+                      },
                     ),
                   ),
                 ],
               ),
-              Center(
-                child: Container(
-                  width: 400,
-                  child: Image.asset('assets/images/sho1.gif'),
+              MaterialButton(
+                padding: const EdgeInsets.all(12.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                onPressed: () {
+
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Container(
+                    width: 400,
+                    child: Image.asset('assets/images/sho8.gif'),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              MaterialButton(
+                padding: const EdgeInsets.all(12.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                onPressed: () {
+
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Container(
+                    width: 400,
+                    child: Image.asset('assets/images/sho1.gif'),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -434,7 +441,7 @@ class MyHomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) => MaterialApp(
                       // title of the application
-                      title: 'SHOES',
+                      title: '𝕎𝕒𝕝𝕜 𝕀𝕟 𝕗𝕒𝕤𝕙𝕚𝕠𝕟',
                       debugShowCheckedModeBanner: false,  //for remove line
                       // theme of the widget
                       theme: ThemeData(
@@ -442,7 +449,7 @@ class MyHomePage extends StatelessWidget {
 
                       ),
                       // Inner UI of the application
-                      home: const MyHomePage(title: 'SHOES'),
+                      home: const MyHomePage(title: '𝕎𝕒𝕝𝕜 𝕀𝕟 𝕗𝕒𝕤𝕙𝕚𝕠𝕟'),
                     )),
                   );
                 }),
@@ -474,11 +481,34 @@ class MyHomePage extends StatelessWidget {
 }
 
 
-void shoe1(BuildContext context) {
+void web(BuildContext context) {
   Navigator.of(context).push(MaterialPageRoute(builder: (context) => NextPage()));
 }
 void categoties(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Categoties()));
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Categories()));
 }
+
+void jordan(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Jordan()));
+}
+
+void sneakers(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Sneakers()));
+}
+
+void loafers(BuildContext context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Loafers()));
+}
+
+// void shoe_screen(BuildContext context) {
+//   Navigator.of(context).push(MaterialPageRoute(builder: (context) => jordan()));
+// }
+// void shoe_screen(BuildContext context) {
+//   Navigator.of(context).push(MaterialPageRoute(builder: (context) => jordan()));
+// }
+// void shoe_screen(BuildContext context) {
+//   Navigator.of(context).push(MaterialPageRoute(builder: (context) => jordan()));
+// }
+
 
 
