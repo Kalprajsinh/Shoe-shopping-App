@@ -1,8 +1,5 @@
 # 𝕎𝕒𝕝𝕜 𝕀𝕟 𝕗𝕒𝕤𝕙𝕚𝕠𝕟
 
-## Video Demonstration
-
-Check out the working of the website in this [#video demonstration](#).
 
 ## Overview
 
